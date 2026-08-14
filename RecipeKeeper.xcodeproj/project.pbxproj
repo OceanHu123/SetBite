@@ -1,0 +1,890 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BF0000010000000000000001 /* RecipeKeeperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000001 /* RecipeKeeperApp.swift */; };
+		BF0000010000000000000002 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000002 /* Recipe.swift */; };
+		BF0000010000000000000003 /* ParsedRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000003 /* ParsedRecipe.swift */; };
+		BF0000010000000000000004 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000004 /* AppSettings.swift */; };
+		BF0000010000000000000005 /* VideoOCRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000005 /* VideoOCRService.swift */; };
+		BF0000010000000000000006 /* DeepSeekClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000006 /* DeepSeekClient.swift */; };
+		BF0000010000000000000007 /* RecipeExtractionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000007 /* RecipeExtractionService.swift */; };
+		BF0000010000000000000008 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000008 /* ContentView.swift */; };
+		BF0000010000000000000009 /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000009 /* RecipeListView.swift */; };
+		BF000001000000000000000A /* AddRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000000A /* AddRecipeView.swift */; };
+		BF000001000000000000000B /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000000B /* RecipeDetailView.swift */; };
+		BF000001000000000000000C /* ToCookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000000C /* ToCookView.swift */; };
+		BF000001000000000000000D /* ShoppingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000000D /* ShoppingListView.swift */; };
+		BF000001000000000000000E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000000E /* SettingsView.swift */; };
+		BF000001000000000000000F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000000F /* Assets.xcassets */; };
+		BF0000010000000000000010 /* ImportCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000017 /* ImportCoordinator.swift */; };
+		BF0000010000000000000011 /* ShareImportStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000016 /* ShareImportStore.swift */; };
+		BF0000010000000000000012 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000012 /* ShareViewController.swift */; };
+		BF0000010000000000000013 /* ShareImportStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000016 /* ShareImportStore.swift */; };
+		BF0000010000000000000014 /* RecipeKeeperShare.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000011 /* RecipeKeeperShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BF0000010000000000000015 /* PasteboardImportBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000019 /* PasteboardImportBridge.swift */; };
+		BF0000010000000000000016 /* PasteboardImportBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000019 /* PasteboardImportBridge.swift */; };
+		BF0000010000000000000018 /* VideoCoverExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000001B /* VideoCoverExtractor.swift */; };
+		BF0000010000000000000019 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000001C /* AppTheme.swift */; };
+		BF000001000000000000001B /* RecipeShoppingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000001E /* RecipeShoppingHelper.swift */; };
+		BF000001000000000000001C /* BodyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000001F /* BodyRecord.swift */; };
+		BF000001000000000000001D /* DefaultPantrySeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000020 /* DefaultPantrySeeder.swift */; };
+		BF000001000000000000001E /* BodyAnalysisClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000021 /* BodyAnalysisClient.swift */; };
+		BF000001000000000000001F /* BodyTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000022 /* BodyTrackerView.swift */; };
+		BF0000010000000000000020 /* WorkoutModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000023 /* WorkoutModels.swift */; };
+		BF0000010000000000000021 /* WorkoutTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000024 /* WorkoutTrackerView.swift */; };
+		BF0000010000000000000022 /* ExerciseBodyCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000025 /* ExerciseBodyCatalog.swift */; };
+		BF0000010000000000000023 /* ExerciseSessionLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000026 /* ExerciseSessionLog.swift */; };
+		BF0000010000000000000024 /* ExerciseProgressionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000027 /* ExerciseProgressionView.swift */; };
+		BF0000010000000000000025 /* OtherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000028 /* OtherView.swift */; };
+		BF0000010000000000000026 /* WorkoutPlanAIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000029 /* WorkoutPlanAIClient.swift */; };
+		BF0000010000000000000027 /* WorkoutPlanChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000002A /* WorkoutPlanChatView.swift */; };
+		BF0000010000000000000028 /* ExerciseNameCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000002B /* ExerciseNameCatalog.swift */; };
+		BF0000010000000000000029 /* DefaultExerciseSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000002C /* DefaultExerciseSeeder.swift */; };
+		BF000001000000000000002D /* CoverImageEditorSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000002D /* CoverImageEditorSheet.swift */; };
+		BF000001000000000000002E /* ImageOCRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000002E /* ImageOCRService.swift */; };
+		BF000001000000000000002F /* WorkoutHealthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000002F /* WorkoutHealthService.swift */; };
+		BF0000010000000000000030 /* WorkoutSessionSummaryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000030 /* WorkoutSessionSummaryBuilder.swift */; };
+		BF0000010000000000000031 /* WorkoutSessionAnalysisClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000031 /* WorkoutSessionAnalysisClient.swift */; };
+		BF0000010000000000000032 /* WorkoutSessionSummaryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000032 /* WorkoutSessionSummaryCard.swift */; };
+		BF0000010000000000000033 /* BodyMuscleDiagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000033 /* BodyMuscleDiagramView.swift */; };
+		BF0000010000000000000035 /* MuscleAtlasFront.json in Resources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000035 /* MuscleAtlasFront.json */; };
+		BF0000010000000000000036 /* MuscleAtlasBack.json in Resources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000036 /* MuscleAtlasBack.json */; };
+		BF0000010000000000000037 /* SVGPathParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000037 /* SVGPathParser.swift */; };
+		BF0000010000000000000038 /* BodyMuscleAtlas.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000038 /* BodyMuscleAtlas.swift */; };
+
+		BF0000010000000000000039 /* WorkoutLogDraftStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000039 /* WorkoutLogDraftStore.swift */; };
+		BF000001000000000000003A /* RestTimerLiveActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000003A /* RestTimerLiveActivityController.swift */; };
+		BF000001000000000000003B /* RestTimerAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000003B /* RestTimerAttributes.swift */; };
+		BF000001000000000000003C /* RestTimerAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000003B /* RestTimerAttributes.swift */; };
+		BF000001000000000000003D /* RestTimerLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000003D /* RestTimerLiveActivity.swift */; };
+		BF000001000000000000003E /* RecipeKeeperWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FR000001000000000000003E /* RecipeKeeperWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+
+		BF0000010000000000000041 /* MealMacroLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000041 /* MealMacroLog.swift */; };
+		BF0000010000000000000042 /* MealCalorieAnalysisClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000042 /* MealCalorieAnalysisClient.swift */; };
+		BF0000010000000000000043 /* MealCalorieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000043 /* MealCalorieView.swift */; };
+		BF0000010000000000000044 /* MacroDailyTargets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000044 /* MacroDailyTargets.swift */; };
+		BF0000010000000000000045 /* OpenFoodFactsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000045 /* OpenFoodFactsClient.swift */; };
+		BF0000010000000000000046 /* MacroFillCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000046 /* MacroFillCatalog.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CP0000010000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = PR0000010000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = TG0000010000000000000002;
+			remoteInfo = RecipeKeeperShare;
+		};
+		CP0000010000000000000002 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = PR0000010000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = TG0000010000000000000003;
+			remoteInfo = RecipeKeeperWidgets;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EF0000010000000000000001 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				BF0000010000000000000014 /* RecipeKeeperShare.appex in Embed Foundation Extensions */,
+				BF000001000000000000003E /* RecipeKeeperWidgets.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FR0000010000000000000001 /* RecipeKeeperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeKeeperApp.swift; sourceTree = "<group>"; };
+		FR0000010000000000000002 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		FR0000010000000000000003 /* ParsedRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsedRecipe.swift; sourceTree = "<group>"; };
+		FR0000010000000000000004 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		FR0000010000000000000005 /* VideoOCRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoOCRService.swift; sourceTree = "<group>"; };
+		FR0000010000000000000006 /* DeepSeekClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepSeekClient.swift; sourceTree = "<group>"; };
+		FR0000010000000000000007 /* RecipeExtractionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeExtractionService.swift; sourceTree = "<group>"; };
+		FR0000010000000000000008 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FR0000010000000000000009 /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
+		FR000001000000000000000A /* AddRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeView.swift; sourceTree = "<group>"; };
+		FR000001000000000000000B /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
+		FR000001000000000000000C /* ToCookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCookView.swift; sourceTree = "<group>"; };
+		FR000001000000000000000D /* ShoppingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListView.swift; sourceTree = "<group>"; };
+		FR000001000000000000000E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FR000001000000000000000F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FR0000010000000000000010 /* RecipeKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR0000010000000000000011 /* RecipeKeeperShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RecipeKeeperShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR0000010000000000000012 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		FR0000010000000000000013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FR0000010000000000000014 /* RecipeKeeper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RecipeKeeper.entitlements; sourceTree = "<group>"; };
+		FR0000010000000000000015 /* RecipeKeeperShare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RecipeKeeperShare.entitlements; sourceTree = "<group>"; };
+		FR0000010000000000000016 /* ShareImportStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareImportStore.swift; sourceTree = "<group>"; };
+		FR0000010000000000000017 /* ImportCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportCoordinator.swift; sourceTree = "<group>"; };
+		FR0000010000000000000018 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FR0000010000000000000019 /* PasteboardImportBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteboardImportBridge.swift; sourceTree = "<group>"; };
+		FR000001000000000000001B /* VideoCoverExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCoverExtractor.swift; sourceTree = "<group>"; };
+		FR000001000000000000001C /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		FR000001000000000000001E /* RecipeShoppingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeShoppingHelper.swift; sourceTree = "<group>"; };
+		FR000001000000000000001F /* BodyRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyRecord.swift; sourceTree = "<group>"; };
+		FR0000010000000000000020 /* DefaultPantrySeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPantrySeeder.swift; sourceTree = "<group>"; };
+		FR0000010000000000000021 /* BodyAnalysisClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyAnalysisClient.swift; sourceTree = "<group>"; };
+		FR0000010000000000000022 /* BodyTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyTrackerView.swift; sourceTree = "<group>"; };
+		FR0000010000000000000023 /* WorkoutModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutModels.swift; sourceTree = "<group>"; };
+		FR0000010000000000000024 /* WorkoutTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTrackerView.swift; sourceTree = "<group>"; };
+		FR0000010000000000000025 /* ExerciseBodyCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseBodyCatalog.swift; sourceTree = "<group>"; };
+		FR0000010000000000000026 /* ExerciseSessionLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSessionLog.swift; sourceTree = "<group>"; };
+		FR0000010000000000000027 /* ExerciseProgressionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseProgressionView.swift; sourceTree = "<group>"; };
+		FR0000010000000000000028 /* OtherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherView.swift; sourceTree = "<group>"; };
+		FR0000010000000000000029 /* WorkoutPlanAIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPlanAIClient.swift; sourceTree = "<group>"; };
+		FR000001000000000000002A /* WorkoutPlanChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPlanChatView.swift; sourceTree = "<group>"; };
+		FR000001000000000000002B /* ExerciseNameCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseNameCatalog.swift; sourceTree = "<group>"; };
+		FR000001000000000000002C /* DefaultExerciseSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultExerciseSeeder.swift; sourceTree = "<group>"; };
+		FR000001000000000000002D /* CoverImageEditorSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverImageEditorSheet.swift; sourceTree = "<group>"; };
+		FR000001000000000000002E /* ImageOCRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOCRService.swift; sourceTree = "<group>"; };
+		FR000001000000000000002F /* WorkoutHealthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutHealthService.swift; sourceTree = "<group>"; };
+		FR0000010000000000000030 /* WorkoutSessionSummaryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSessionSummaryBuilder.swift; sourceTree = "<group>"; };
+		FR0000010000000000000031 /* WorkoutSessionAnalysisClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSessionAnalysisClient.swift; sourceTree = "<group>"; };
+		FR0000010000000000000032 /* WorkoutSessionSummaryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSessionSummaryCard.swift; sourceTree = "<group>"; };
+		FR0000010000000000000033 /* BodyMuscleDiagramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMuscleDiagramView.swift; sourceTree = "<group>"; };
+		FR0000010000000000000035 /* MuscleAtlasFront.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MuscleAtlasFront.json; sourceTree = "<group>"; };
+		FR0000010000000000000036 /* MuscleAtlasBack.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MuscleAtlasBack.json; sourceTree = "<group>"; };
+		FR0000010000000000000037 /* SVGPathParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGPathParser.swift; sourceTree = "<group>"; };
+		FR0000010000000000000038 /* BodyMuscleAtlas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMuscleAtlas.swift; sourceTree = "<group>"; };
+
+		FR0000010000000000000039 /* WorkoutLogDraftStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutLogDraftStore.swift; sourceTree = "<group>"; };
+		FR000001000000000000003A /* RestTimerLiveActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTimerLiveActivityController.swift; sourceTree = "<group>"; };
+		FR000001000000000000003B /* RestTimerAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTimerAttributes.swift; sourceTree = "<group>"; };
+		FR000001000000000000003D /* RestTimerLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTimerLiveActivity.swift; sourceTree = "<group>"; };
+		FR000001000000000000003E /* RecipeKeeperWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RecipeKeeperWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR000001000000000000003F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FR0000010000000000000040 /* RecipeKeeperWidgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RecipeKeeperWidgets.entitlements; sourceTree = "<group>"; };
+
+		FR0000010000000000000041 /* MealMacroLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealMacroLog.swift; sourceTree = "<group>"; };
+		FR0000010000000000000042 /* MealCalorieAnalysisClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCalorieAnalysisClient.swift; sourceTree = "<group>"; };
+		FR0000010000000000000043 /* MealCalorieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCalorieView.swift; sourceTree = "<group>"; };
+		FR0000010000000000000044 /* MacroDailyTargets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroDailyTargets.swift; sourceTree = "<group>"; };
+		FR0000010000000000000045 /* OpenFoodFactsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFoodFactsClient.swift; sourceTree = "<group>"; };
+		FR0000010000000000000046 /* MacroFillCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroFillCatalog.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FP0000010000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FP0000010000000000000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FP0000010000000000000003 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		GR0000010000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				GR0000010000000000000002 /* RecipeKeeper */,
+				GR0000010000000000000007 /* RecipeKeeperShare */,
+				GR000001000000000000000B /* RecipeKeeperWidgets */,
+				GR0000010000000000000008 /* Shared */,
+				GR0000010000000000000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		GR0000010000000000000002 /* RecipeKeeper */ = {
+			isa = PBXGroup;
+			children = (
+				FR0000010000000000000001 /* RecipeKeeperApp.swift */,
+				FR0000010000000000000018 /* Info.plist */,
+				FR0000010000000000000014 /* RecipeKeeper.entitlements */,
+				GR0000010000000000000004 /* Models */,
+				GR0000010000000000000005 /* Services */,
+				GR0000010000000000000006 /* Views */,
+				GR000001000000000000000A /* Resources */,
+				FR000001000000000000000F /* Assets.xcassets */,
+			);
+			path = RecipeKeeper;
+			sourceTree = "<group>";
+		};
+		GR0000010000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FR0000010000000000000010 /* RecipeKeeper.app */,
+				FR0000010000000000000011 /* RecipeKeeperShare.appex */,
+				FR000001000000000000003E /* RecipeKeeperWidgets.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		GR0000010000000000000004 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FR0000010000000000000002 /* Recipe.swift */,
+				FR0000010000000000000003 /* ParsedRecipe.swift */,
+				FR000001000000000000001F /* BodyRecord.swift */,
+				FR0000010000000000000023 /* WorkoutModels.swift */,
+				FR0000010000000000000025 /* ExerciseBodyCatalog.swift */,
+				FR000001000000000000002B /* ExerciseNameCatalog.swift */,
+				FR0000010000000000000026 /* ExerciseSessionLog.swift */,
+				FR0000010000000000000041 /* MealMacroLog.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		GR0000010000000000000005 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FR0000010000000000000004 /* AppSettings.swift */,
+				FR0000010000000000000005 /* VideoOCRService.swift */,
+				FR0000010000000000000006 /* DeepSeekClient.swift */,
+				FR0000010000000000000007 /* RecipeExtractionService.swift */,
+				FR0000010000000000000017 /* ImportCoordinator.swift */,
+				FR000001000000000000001B /* VideoCoverExtractor.swift */,
+				FR000001000000000000001E /* RecipeShoppingHelper.swift */,
+				FR0000010000000000000020 /* DefaultPantrySeeder.swift */,
+				FR000001000000000000002C /* DefaultExerciseSeeder.swift */,
+				FR0000010000000000000021 /* BodyAnalysisClient.swift */,
+				FR0000010000000000000029 /* WorkoutPlanAIClient.swift */,
+				FR000001000000000000002E /* ImageOCRService.swift */,
+				FR000001000000000000002F /* WorkoutHealthService.swift */,
+				FR0000010000000000000030 /* WorkoutSessionSummaryBuilder.swift */,
+				FR0000010000000000000031 /* WorkoutSessionAnalysisClient.swift */,
+				FR0000010000000000000037 /* SVGPathParser.swift */,
+				FR0000010000000000000038 /* BodyMuscleAtlas.swift */,
+				FR0000010000000000000039 /* WorkoutLogDraftStore.swift */,
+				FR000001000000000000003A /* RestTimerLiveActivityController.swift */,
+				FR0000010000000000000042 /* MealCalorieAnalysisClient.swift */,
+				FR0000010000000000000044 /* MacroDailyTargets.swift */,
+				FR0000010000000000000045 /* OpenFoodFactsClient.swift */,
+				FR0000010000000000000046 /* MacroFillCatalog.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		GR0000010000000000000006 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				GR0000010000000000000009 /* Components */,
+				FR0000010000000000000008 /* ContentView.swift */,
+				FR0000010000000000000009 /* RecipeListView.swift */,
+				FR0000010000000000000043 /* MealCalorieView.swift */,
+				FR000001000000000000000A /* AddRecipeView.swift */,
+				FR000001000000000000000B /* RecipeDetailView.swift */,
+				FR000001000000000000000C /* ToCookView.swift */,
+				FR000001000000000000000D /* ShoppingListView.swift */,
+				FR0000010000000000000022 /* BodyTrackerView.swift */,
+				FR0000010000000000000024 /* WorkoutTrackerView.swift */,
+				FR0000010000000000000027 /* ExerciseProgressionView.swift */,
+				FR0000010000000000000028 /* OtherView.swift */,
+				FR000001000000000000002A /* WorkoutPlanChatView.swift */,
+				FR000001000000000000000E /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		GR0000010000000000000007 /* RecipeKeeperShare */ = {
+			isa = PBXGroup;
+			children = (
+				FR0000010000000000000012 /* ShareViewController.swift */,
+				FR0000010000000000000013 /* Info.plist */,
+				FR0000010000000000000015 /* RecipeKeeperShare.entitlements */,
+			);
+			path = RecipeKeeperShare;
+			sourceTree = "<group>";
+		};
+		GR0000010000000000000008 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				FR0000010000000000000016 /* ShareImportStore.swift */,
+				FR0000010000000000000019 /* PasteboardImportBridge.swift */,
+				FR000001000000000000003B /* RestTimerAttributes.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		GR000001000000000000000B /* RecipeKeeperWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				FR000001000000000000003D /* RestTimerLiveActivity.swift */,
+				FR000001000000000000003F /* Info.plist */,
+				FR0000010000000000000040 /* RecipeKeeperWidgets.entitlements */,
+			);
+			path = RecipeKeeperWidgets;
+			sourceTree = "<group>";
+		};
+		GR000001000000000000000A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FR0000010000000000000035 /* MuscleAtlasFront.json */,
+				FR0000010000000000000036 /* MuscleAtlasBack.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		GR0000010000000000000009 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FR000001000000000000001C /* AppTheme.swift */,
+				FR000001000000000000002D /* CoverImageEditorSheet.swift */,
+				FR0000010000000000000032 /* WorkoutSessionSummaryCard.swift */,
+				FR0000010000000000000033 /* BodyMuscleDiagramView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		TG0000010000000000000001 /* RecipeKeeper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CL0000010000000000000002 /* Build configuration list for PBXNativeTarget "RecipeKeeper" */;
+			buildPhases = (
+				SP0000010000000000000001 /* Sources */,
+				FP0000010000000000000001 /* Frameworks */,
+				RP0000010000000000000001 /* Resources */,
+				EF0000010000000000000001 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				TD0000010000000000000001 /* PBXTargetDependency */,
+				TD0000010000000000000002 /* PBXTargetDependency */,
+			);
+			name = RecipeKeeper;
+			productName = RecipeKeeper;
+			productReference = FR0000010000000000000010 /* RecipeKeeper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		TG0000010000000000000002 /* RecipeKeeperShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CL0000010000000000000003 /* Build configuration list for PBXNativeTarget "RecipeKeeperShare" */;
+			buildPhases = (
+				SP0000010000000000000002 /* Sources */,
+				FP0000010000000000000002 /* Frameworks */,
+				RP0000010000000000000002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RecipeKeeperShare;
+			productName = RecipeKeeperShare;
+			productReference = FR0000010000000000000011 /* RecipeKeeperShare.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		TG0000010000000000000003 /* RecipeKeeperWidgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CL0000010000000000000004 /* Build configuration list for PBXNativeTarget "RecipeKeeperWidgets" */;
+			buildPhases = (
+				SP0000010000000000000003 /* Sources */,
+				FP0000010000000000000003 /* Frameworks */,
+				RP0000010000000000000003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RecipeKeeperWidgets;
+			productName = RecipeKeeperWidgets;
+			productReference = FR000001000000000000003E /* RecipeKeeperWidgets.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		PR0000010000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 2650;
+				TargetAttributes = {
+					TG0000010000000000000001 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					TG0000010000000000000002 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					TG0000010000000000000003 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = CL0000010000000000000001 /* Build configuration list for PBXProject "RecipeKeeper" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = "zh-Hans";
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = GR0000010000000000000001;
+			productRefGroup = GR0000010000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				TG0000010000000000000001 /* RecipeKeeper */,
+				TG0000010000000000000002 /* RecipeKeeperShare */,
+				TG0000010000000000000003 /* RecipeKeeperWidgets */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		RP0000010000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF000001000000000000000F /* Assets.xcassets in Resources */,
+				BF0000010000000000000035 /* MuscleAtlasFront.json in Resources */,
+				BF0000010000000000000036 /* MuscleAtlasBack.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		RP0000010000000000000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		RP0000010000000000000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		SP0000010000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF0000010000000000000001 /* RecipeKeeperApp.swift in Sources */,
+				BF0000010000000000000002 /* Recipe.swift in Sources */,
+				BF0000010000000000000003 /* ParsedRecipe.swift in Sources */,
+				BF0000010000000000000004 /* AppSettings.swift in Sources */,
+				BF0000010000000000000005 /* VideoOCRService.swift in Sources */,
+				BF0000010000000000000006 /* DeepSeekClient.swift in Sources */,
+				BF0000010000000000000007 /* RecipeExtractionService.swift in Sources */,
+				BF0000010000000000000008 /* ContentView.swift in Sources */,
+				BF0000010000000000000009 /* RecipeListView.swift in Sources */,
+				BF000001000000000000000A /* AddRecipeView.swift in Sources */,
+				BF000001000000000000000B /* RecipeDetailView.swift in Sources */,
+				BF000001000000000000000C /* ToCookView.swift in Sources */,
+				BF000001000000000000000D /* ShoppingListView.swift in Sources */,
+				BF000001000000000000000E /* SettingsView.swift in Sources */,
+				BF0000010000000000000010 /* ImportCoordinator.swift in Sources */,
+				BF0000010000000000000011 /* ShareImportStore.swift in Sources */,
+				BF0000010000000000000015 /* PasteboardImportBridge.swift in Sources */,
+				BF0000010000000000000018 /* VideoCoverExtractor.swift in Sources */,
+				BF0000010000000000000019 /* AppTheme.swift in Sources */,
+				BF000001000000000000002D /* CoverImageEditorSheet.swift in Sources */,
+				BF000001000000000000002E /* ImageOCRService.swift in Sources */,
+				BF000001000000000000002F /* WorkoutHealthService.swift in Sources */,
+				BF0000010000000000000030 /* WorkoutSessionSummaryBuilder.swift in Sources */,
+				BF0000010000000000000031 /* WorkoutSessionAnalysisClient.swift in Sources */,
+				BF0000010000000000000032 /* WorkoutSessionSummaryCard.swift in Sources */,
+				BF0000010000000000000033 /* BodyMuscleDiagramView.swift in Sources */,
+				BF0000010000000000000037 /* SVGPathParser.swift in Sources */,
+				BF0000010000000000000038 /* BodyMuscleAtlas.swift in Sources */,
+				BF0000010000000000000039 /* WorkoutLogDraftStore.swift in Sources */,
+				BF000001000000000000003A /* RestTimerLiveActivityController.swift in Sources */,
+				BF000001000000000000003B /* RestTimerAttributes.swift in Sources */,
+				BF0000010000000000000041 /* MealMacroLog.swift in Sources */,
+				BF0000010000000000000042 /* MealCalorieAnalysisClient.swift in Sources */,
+				BF0000010000000000000044 /* MacroDailyTargets.swift in Sources */,
+				BF0000010000000000000045 /* OpenFoodFactsClient.swift in Sources */,
+				BF0000010000000000000046 /* MacroFillCatalog.swift in Sources */,
+				BF0000010000000000000043 /* MealCalorieView.swift in Sources */,
+				BF000001000000000000001B /* RecipeShoppingHelper.swift in Sources */,
+				BF000001000000000000001C /* BodyRecord.swift in Sources */,
+				BF000001000000000000001D /* DefaultPantrySeeder.swift in Sources */,
+				BF0000010000000000000029 /* DefaultExerciseSeeder.swift in Sources */,
+				BF000001000000000000001E /* BodyAnalysisClient.swift in Sources */,
+				BF000001000000000000001F /* BodyTrackerView.swift in Sources */,
+				BF0000010000000000000020 /* WorkoutModels.swift in Sources */,
+				BF0000010000000000000021 /* WorkoutTrackerView.swift in Sources */,
+				BF0000010000000000000022 /* ExerciseBodyCatalog.swift in Sources */,
+				BF0000010000000000000023 /* ExerciseSessionLog.swift in Sources */,
+				BF0000010000000000000024 /* ExerciseProgressionView.swift in Sources */,
+				BF0000010000000000000025 /* OtherView.swift in Sources */,
+				BF0000010000000000000026 /* WorkoutPlanAIClient.swift in Sources */,
+				BF0000010000000000000027 /* WorkoutPlanChatView.swift in Sources */,
+				BF0000010000000000000028 /* ExerciseNameCatalog.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		SP0000010000000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF0000010000000000000012 /* ShareViewController.swift in Sources */,
+				BF0000010000000000000013 /* ShareImportStore.swift in Sources */,
+				BF0000010000000000000016 /* PasteboardImportBridge.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		SP0000010000000000000003 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF000001000000000000003D /* RestTimerLiveActivity.swift in Sources */,
+				BF000001000000000000003C /* RestTimerAttributes.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		TD0000010000000000000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = TG0000010000000000000002 /* RecipeKeeperShare */;
+			targetProxy = CP0000010000000000000001 /* PBXContainerItemProxy */;
+		};
+		TD0000010000000000000002 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = TG0000010000000000000003 /* RecipeKeeperWidgets */;
+			targetProxy = CP0000010000000000000002 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		BC0000010000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 3Q9V3XLC8U;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BC0000010000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 3Q9V3XLC8U;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BC0000010000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RecipeKeeper/RecipeKeeper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RecipeKeeper/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "SetBite食练记";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "需要访问相册以选择小红书保存的烹饪视频";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oak.RecipeKeeper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		BC0000010000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RecipeKeeper/RecipeKeeper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RecipeKeeper/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "SetBite食练记";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "需要访问相册以选择小红书保存的烹饪视频";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oak.RecipeKeeper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		BC0000010000000000000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = RecipeKeeperShare/RecipeKeeperShare.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = RecipeKeeperShare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oak.RecipeKeeper.ShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		BC0000010000000000000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = RecipeKeeperShare/RecipeKeeperShare.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = RecipeKeeperShare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oak.RecipeKeeper.ShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		BC0000010000000000000007 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = RecipeKeeperWidgets/RecipeKeeperWidgets.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RecipeKeeperWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "SetBite训练";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oak.RecipeKeeper.Widgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		BC0000010000000000000008 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = RecipeKeeperWidgets/RecipeKeeperWidgets.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RecipeKeeperWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "SetBite训练";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oak.RecipeKeeper.Widgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CL0000010000000000000001 /* Build configuration list for PBXProject "RecipeKeeper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC0000010000000000000001 /* Debug */,
+				BC0000010000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CL0000010000000000000002 /* Build configuration list for PBXNativeTarget "RecipeKeeper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC0000010000000000000003 /* Debug */,
+				BC0000010000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CL0000010000000000000003 /* Build configuration list for PBXNativeTarget "RecipeKeeperShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC0000010000000000000005 /* Debug */,
+				BC0000010000000000000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CL0000010000000000000004 /* Build configuration list for PBXNativeTarget "RecipeKeeperWidgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC0000010000000000000007 /* Debug */,
+				BC0000010000000000000008 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = PR0000010000000000000001 /* Project object */;
+}

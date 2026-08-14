@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSCameraUsageDescription</key>
+	<string>拍摄餐食照片，用于识别本顿热量与碳蛋脂。</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>读取 Apple Watch「体能训练」中的本次训练时长和消耗热量，用于训练复盘。</string>
+	<key>NSSupportsLiveActivities</key>
+	<true/>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.oak.RecipeKeeper</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>recipekeeper</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>
