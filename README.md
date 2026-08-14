@@ -2,7 +2,7 @@
 
 Personal iOS app for **meal planning**, **macro/calorie tracking**, and **strength training** — built with SwiftUI and SwiftData.
 
-> **Copyright © 2025 Oakley. All rights reserved.**  
+> **Copyright © 2026 Oakley. All rights reserved.**  
 > This repository is public for portfolio and learning reference only.  
 > No license is granted for commercial use, redistribution, or derivative works without written permission.
 
