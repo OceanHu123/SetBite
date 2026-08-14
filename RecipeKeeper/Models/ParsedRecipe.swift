@@ -137,7 +137,7 @@ enum DeepSeekHTTP {
       do {
         let (data, response) = try await currentSession().data(for: request)
         guard let http = response as? HTTPURLResponse else {
-          throw RecipeKeeperError.apiError("无响应")
+          throw RecipeKeeperError.apiError("No response")
         }
         if !(200..<300).contains(http.statusCode) {
           throw RecipeKeeperError.apiError(httpErrorMessage(data: data, status: http.statusCode))
@@ -179,23 +179,23 @@ enum DeepSeekHTTP {
   }
 
   static func networkErrorMessage(_ error: Error?) -> String {
-    guard let error else { return "网络请求失败，请稍后重试" }
+    guard let error else { return "Network request failed. Please try again later." }
     if isTransient(error) {
       let text = (error.localizedDescription + String(describing: error)).lowercased()
       if text.contains("tls") || text.contains("ssl") || text.contains("secure") || text.contains("certificate") {
-        return "连不上 DeepSeek（TLS 安全连接失败）。请换个网络或关掉 VPN 后再试"
+        return "Could not reach DeepSeek (TLS connection failed). Try another network or turn off VPN."
       }
       if let urlError = error as? URLError {
         switch urlError.code {
         case .timedOut:
-          return "请求超时，请检查网络后重试"
+          return "Request timed out. Check your connection and try again."
         case .notConnectedToInternet, .dataNotAllowed:
-          return "当前没有网络，请连上 Wi‑Fi 或蜂窝后再试"
+          return "No internet connection. Connect to Wi‑Fi or cellular and try again."
         default:
           break
         }
       }
-      return "网络不稳定，请稍后重试"
+      return "Unstable network. Please try again later."
     }
     return error.localizedDescription
   }
@@ -206,16 +206,16 @@ enum DeepSeekHTTP {
         let message = (error["message"] as? String) ?? (error["code"] as? String) ?? ""
         if !message.isEmpty {
           if message.localizedCaseInsensitiveContains("model") {
-            return "模型不可用，请检查 DeepSeek API Key 是否有效"
+            return "Model unavailable. Check that your DeepSeek API Key is valid."
           }
           if message.localizedCaseInsensitiveContains("auth")
               || message.localizedCaseInsensitiveContains("key")
               || status == 401 {
-            return "API Key 无效或未授权，请到设置里重新填写"
+            return "Invalid or unauthorized API Key. Re-enter it in Settings."
           }
           if message.localizedCaseInsensitiveContains("balance")
               || message.localizedCaseInsensitiveContains("quota") {
-            return "DeepSeek 额度不足，请充值后再试"
+            return "DeepSeek balance is low. Add credits and try again."
           }
           return message
         }
@@ -226,7 +226,7 @@ enum DeepSeekHTTP {
     }
     let raw = String(data: data, encoding: .utf8)?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
     if !raw.isEmpty, raw.count < 180 {
-      return "HTTP \(status)：\(raw)"
+      return "HTTP \(status): \(raw)"
     }
     return "HTTP \(status)"
   }
@@ -243,17 +243,17 @@ enum RecipeKeeperError: LocalizedError {
   var errorDescription: String? {
     switch self {
     case .missingAPIKey:
-      return "请先在设置中填写 DeepSeek API Key"
+      return "Add your DeepSeek API Key in Settings first."
     case .invalidVideo:
-      return "无法读取该视频"
+      return "Could not read that video."
     case .invalidImage:
-      return "无法读取所选图片"
+      return "Could not read the selected image."
     case .noTextFound:
-      return "没有识别到画面文字"
+      return "No text found in the image."
     case .apiError(let message):
-      return "API 请求失败：\(message)"
+      return "API request failed: \(message)"
     case .parseError:
-      return "无法解析食谱"
+      return "Could not parse the recipe."
     }
   }
 }

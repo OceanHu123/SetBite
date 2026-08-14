@@ -24,7 +24,7 @@ enum MacroFillCatalog {
         let count = grams / pieceGrams
         if count >= 0.4 {
           let shown = count < 1 ? String(format: "%.1f", (count * 2).rounded() / 2) : "\(Int(count.rounded()))"
-          text += "（约 \(shown)\(pieceUnit)）"
+          text += " (~\(shown) \(pieceUnit))"
         }
       }
       return text
@@ -41,27 +41,27 @@ enum MacroFillCatalog {
     switch kind {
     case .carbs:
       return [
-        Food("生大米", per100g: 78),
-        Food("熟米饭", per100g: 26),
-        Food("生燕麦片", per100g: 67),
-        Food("香蕉", per100g: 22, pieceGrams: 120, pieceUnit: "根"),
-        Food("红薯", per100g: 20)
+        Food("Raw rice", per100g: 78),
+        Food("Cooked rice", per100g: 26),
+        Food("Raw oats", per100g: 67),
+        Food("Banana", per100g: 22, pieceGrams: 120, pieceUnit: "pc"),
+        Food("Sweet potato", per100g: 20)
       ]
     case .protein:
       return [
-        Food("生鸡胸肉", per100g: 23),
-        Food("熟鸡胸肉", per100g: 31),
-        Food("鸡蛋", per100g: 13, pieceGrams: 50, pieceUnit: "个"),
-        Food("北豆腐", per100g: 12),
-        Food("虾仁", per100g: 18)
+        Food("Raw chicken breast", per100g: 23),
+        Food("Cooked chicken breast", per100g: 31),
+        Food("Egg", per100g: 13, pieceGrams: 50, pieceUnit: "pc"),
+        Food("Firm tofu", per100g: 12),
+        Food("Shrimp", per100g: 18)
       ]
     case .fat:
       return [
-        Food("橄榄油", per100g: 100, pieceGrams: 14, pieceUnit: "勺"),
-        Food("牛油果", per100g: 15, pieceGrams: 150, pieceUnit: "个"),
-        Food("花生", per100g: 44),
-        Food("核桃", per100g: 65),
-        Food("全脂牛奶", per100g: 3.6)
+        Food("Olive oil", per100g: 100, pieceGrams: 14, pieceUnit: "tbsp"),
+        Food("Avocado", per100g: 15, pieceGrams: 150, pieceUnit: "pc"),
+        Food("Peanuts", per100g: 44),
+        Food("Walnuts", per100g: 65),
+        Food("Whole milk", per100g: 3.6)
       ]
     }
   }

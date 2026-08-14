@@ -688,8 +688,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecipeKeeper/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "SetBite食练记";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "需要访问相册以选择小红书保存的烹饪视频";
+				INFOPLIST_KEY_CFBundleDisplayName = SetBite;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Access your photo library to pick cooking videos saved from social apps.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -720,8 +720,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecipeKeeper/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "SetBite食练记";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "需要访问相册以选择小红书保存的烹饪视频";
+				INFOPLIST_KEY_CFBundleDisplayName = SetBite;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Access your photo library to pick cooking videos saved from social apps.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -800,7 +800,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecipeKeeperWidgets/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "SetBite训练";
+				INFOPLIST_KEY_CFBundleDisplayName = "SetBite Training";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -827,7 +827,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecipeKeeperWidgets/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "SetBite训练";
+				INFOPLIST_KEY_CFBundleDisplayName = "SetBite Training";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

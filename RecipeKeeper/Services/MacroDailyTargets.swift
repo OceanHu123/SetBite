@@ -10,7 +10,7 @@ enum MacroDailyTargets {
     let isTrainingDay: Bool
 
     var dayLabel: String {
-      isTrainingDay ? "训练日" : "休息日"
+      isTrainingDay ? "Training day" : "Rest day"
     }
 
     func grams(for kind: MacroKind) -> Double {

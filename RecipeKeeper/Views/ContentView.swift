@@ -7,10 +7,10 @@ struct ContentView: View {
   var body: some View {
     TabView {
       RecipeListView()
-        .tabItem { Label("吃", systemImage: "fork.knife") }
+        .tabItem { Label("Eat", systemImage: "fork.knife") }
 
       BodyTrackerView()
-        .tabItem { Label("练", systemImage: "figure.strengthtraining.traditional") }
+        .tabItem { Label("Train", systemImage: "figure.strengthtraining.traditional") }
     }
     .tint(AppTheme.accent)
     .onAppear {

@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSCameraUsageDescription</key>
-	<string>拍摄餐食照片，用于识别本顿热量与碳蛋脂。</string>
+	<string>Take meal photos to estimate calories and macros for this meal.</string>
 	<key>NSHealthShareUsageDescription</key>
-	<string>读取 Apple Watch「体能训练」中的本次训练时长和消耗热量，用于训练复盘。</string>
+	<string>Read workout duration and calories from Apple Watch Workouts for your training recap.</string>
 	<key>NSSupportsLiveActivities</key>
 	<true/>
 	<key>UIUserInterfaceStyle</key>

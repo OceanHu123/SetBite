@@ -47,17 +47,17 @@ enum MacroKind: String, CaseIterable, Identifiable {
 
   var title: String {
     switch self {
-    case .carbs: return "碳水"
-    case .protein: return "蛋白质"
-    case .fat: return "脂肪"
+    case .carbs: return "Carbs"
+    case .protein: return "Protein"
+    case .fat: return "Fat"
     }
   }
 
   var shortTitle: String {
     switch self {
-    case .carbs: return "碳"
-    case .protein: return "蛋"
-    case .fat: return "脂"
+    case .carbs: return "C"
+    case .protein: return "P"
+    case .fat: return "F"
     }
   }
 

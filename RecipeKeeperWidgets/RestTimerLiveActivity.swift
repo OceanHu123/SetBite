@@ -23,13 +23,13 @@ struct RestTimerLiveActivity: Widget {
             .lineLimit(1)
         }
         DynamicIslandExpandedRegion(.trailing) {
-          Text("第\(context.state.setNumber)/\(context.state.totalSets)组")
+          Text("Set \(context.state.setNumber)/\(context.state.totalSets)")
             .font(.caption.weight(.semibold))
             .monospacedDigit()
         }
         DynamicIslandExpandedRegion(.bottom) {
           HStack {
-            Text("间歇")
+            Text("Rest")
               .font(.caption)
               .foregroundStyle(.secondary)
             Spacer()
@@ -75,13 +75,13 @@ private struct RestTimerLockScreenView: View {
           .font(.subheadline.weight(.semibold))
           .lineLimit(1)
         Spacer()
-        Text("第\(context.state.setNumber)/\(context.state.totalSets)组")
+        Text("Set \(context.state.setNumber)/\(context.state.totalSets)")
           .font(.caption.weight(.semibold))
           .foregroundStyle(.secondary)
       }
 
       HStack(alignment: .lastTextBaseline) {
-        Text("间歇倒计时")
+        Text("Rest timer")
           .font(.caption)
           .foregroundStyle(.secondary)
         Spacer()
