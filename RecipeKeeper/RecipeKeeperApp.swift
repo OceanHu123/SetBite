@@ -4,11 +4,14 @@ import SwiftUI
 @main
 struct RecipeKeeperApp: App {
   @StateObject private var importCoordinator = ImportCoordinator()
+  @StateObject private var languageStore = LanguageStore()
 
   var body: some Scene {
     WindowGroup {
       ContentView()
         .environmentObject(importCoordinator)
+        .environmentObject(languageStore)
+        .id(languageStore.mode)
         .onOpenURL { url in
           guard url.scheme == "recipekeeper" else { return }
           importCoordinator.checkForPendingImport()

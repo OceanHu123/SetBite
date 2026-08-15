@@ -113,7 +113,7 @@ private struct AnatomyFigurePanel: View {
       }
       .stroke(AppTheme.muscleLine.opacity(isActive ? 0.55 : 0.32), lineWidth: 0.55)
 
-      Text(callout.label)
+      Text(BodyPartLexicon.displayMuscleLabel(callout.label))
         .font(.system(size: 8.5, weight: isActive ? (isPrimary ? .bold : .semibold) : .regular))
         .foregroundStyle(isActive ? Color.primary.opacity(0.88) : AppTheme.muscleLabelInactive)
         .position(labelPt)

@@ -139,7 +139,7 @@ final class ExerciseTemplate {
   }
 
   var categoryLabel: String {
-    "\(bodyPart) · \(bodySubpart)"
+    BodyPartLexicon.display(part: bodyPart, subpart: bodySubpart)
   }
 
   static func normalize(_ name: String) -> String {

@@ -7,10 +7,10 @@ struct ContentView: View {
   var body: some View {
     TabView {
       RecipeListView()
-        .tabItem { Label("吃", systemImage: "fork.knife") }
+        .tabItem { Label(L10n.tabEat, systemImage: "fork.knife") }
 
       BodyTrackerView()
-        .tabItem { Label("练", systemImage: "figure.strengthtraining.traditional") }
+        .tabItem { Label(L10n.tabTrain, systemImage: "figure.strengthtraining.traditional") }
     }
     .tint(AppTheme.accent)
     .onAppear {
@@ -24,6 +24,7 @@ struct ContentView: View {
 #Preview {
   ContentView()
     .environmentObject(ImportCoordinator())
+    .environmentObject(LanguageStore())
     .modelContainer(for: [
       Recipe.self, ShoppingItem.self, PantryItem.self, CookingLog.self, MealMacroLog.self, BodyRecord.self,
       WorkoutWeekPlan.self, WorkoutDayPlan.self, WorkoutExercise.self, ExerciseTemplate.self,

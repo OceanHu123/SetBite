@@ -71,6 +71,8 @@
 		BF0000010000000000000044 /* MacroDailyTargets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000044 /* MacroDailyTargets.swift */; };
 		BF0000010000000000000045 /* OpenFoodFactsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000045 /* OpenFoodFactsClient.swift */; };
 		BF0000010000000000000046 /* MacroFillCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000046 /* MacroFillCatalog.swift */; };
+		BF0000010000000000000047 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000047 /* AppLanguage.swift */; };
+		BF0000010000000000000048 /* ExerciseLexicon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000048 /* ExerciseLexicon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -174,6 +176,8 @@
 		FR0000010000000000000044 /* MacroDailyTargets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroDailyTargets.swift; sourceTree = "<group>"; };
 		FR0000010000000000000045 /* OpenFoodFactsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFoodFactsClient.swift; sourceTree = "<group>"; };
 		FR0000010000000000000046 /* MacroFillCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroFillCatalog.swift; sourceTree = "<group>"; };
+		FR0000010000000000000047 /* AppLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLanguage.swift; sourceTree = "<group>"; };
+		FR0000010000000000000048 /* ExerciseLexicon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseLexicon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +252,7 @@
 				FR000001000000000000002B /* ExerciseNameCatalog.swift */,
 				FR0000010000000000000026 /* ExerciseSessionLog.swift */,
 				FR0000010000000000000041 /* MealMacroLog.swift */,
+				FR0000010000000000000048 /* ExerciseLexicon.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				FR0000010000000000000004 /* AppSettings.swift */,
+				FR0000010000000000000047 /* AppLanguage.swift */,
 				FR0000010000000000000005 /* VideoOCRService.swift */,
 				FR0000010000000000000006 /* DeepSeekClient.swift */,
 				FR0000010000000000000007 /* RecipeExtractionService.swift */,
@@ -520,6 +526,8 @@
 				BF0000010000000000000044 /* MacroDailyTargets.swift in Sources */,
 				BF0000010000000000000045 /* OpenFoodFactsClient.swift in Sources */,
 				BF0000010000000000000046 /* MacroFillCatalog.swift in Sources */,
+				BF0000010000000000000047 /* AppLanguage.swift in Sources */,
+				BF0000010000000000000048 /* ExerciseLexicon.swift in Sources */,
 				BF0000010000000000000043 /* MealCalorieView.swift in Sources */,
 				BF000001000000000000001B /* RecipeShoppingHelper.swift in Sources */,
 				BF000001000000000000001C /* BodyRecord.swift in Sources */,

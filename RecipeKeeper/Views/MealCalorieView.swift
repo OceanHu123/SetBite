@@ -83,7 +83,7 @@ struct MealCalorieView: View {
     .dismissKeyboardOnTap()
     .keyboardDoneToolbar()
     .appPageBackground()
-    .navigationTitle("热量记录")
+    .navigationTitle(L10n.calorieLog)
     .navigationBarTitleDisplayMode(.inline)
     .onChange(of: selectedPhotoItem) { _, item in
       dismissCaptionKeyboard()
@@ -110,7 +110,7 @@ struct MealCalorieView: View {
   private var dailyProgressCard: some View {
     VStack(spacing: 18) {
       HStack(alignment: .firstTextBaseline) {
-        Text("今日热量")
+        Text(L10n.todayCalories)
           .font(.headline)
           .foregroundStyle(AppTheme.accent)
         Spacer()
@@ -207,11 +207,11 @@ struct MealCalorieView: View {
     let remaining = row.target - row.eaten
     return VStack(alignment: .leading, spacing: 6) {
       if remaining <= 0 {
-        Text("\(row.kind.title)已达标，不必再补。")
+        Text(L10n.tf("%@ target met.", "%@已达标，不必再补。", row.kind.title))
           .font(.caption)
           .foregroundStyle(.secondary)
       } else {
-        Text("还差 \(Int(remaining.rounded()))g \(row.kind.title)，大约吃：")
+        Text(L10n.tf("Still need %dg %@. About:", "还差 %dg %@，大约吃：", Int(remaining.rounded()), row.kind.title))
           .font(.caption.weight(.semibold))
           .foregroundStyle(row.kind.chartColor)
         ForEach(MacroFillCatalog.foods(for: row.kind)) { food in
@@ -228,7 +228,7 @@ struct MealCalorieView: View {
 
   private var captureCard: some View {
     VStack(alignment: .leading, spacing: 14) {
-      Text("记录本顿")
+      Text(L10n.logMeal)
         .font(.headline)
         .foregroundStyle(AppTheme.accent)
 
@@ -262,7 +262,7 @@ struct MealCalorieView: View {
               Image(systemName: "fork.knife")
                 .font(.largeTitle)
                 .foregroundStyle(AppTheme.accent)
-              Text("拍照、选菜谱，或写品牌+克数")
+              Text(L10n.logMealHint)
                 .font(.footnote)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
@@ -275,12 +275,12 @@ struct MealCalorieView: View {
         HStack(spacing: 8) {
           Image(systemName: "book.closed.fill")
             .foregroundStyle(AppTheme.accent)
-          Text("已选菜谱：\(recipeTitle)")
+          Text("\(L10n.selectedRecipe)\(recipeTitle)")
             .font(.caption.weight(.semibold))
             .foregroundStyle(.secondary)
             .lineLimit(1)
           Spacer()
-          Button("清除") {
+          Button(L10n.clear) {
             selectedRecipeTitle = nil
           }
           .font(.caption.weight(.semibold))
@@ -294,7 +294,7 @@ struct MealCalorieView: View {
         .submitLabel(.done)
         .onSubmit { dismissCaptionKeyboard() }
 
-      Text("写品牌+克数会查包装成分表，更准；家常菜仍估算。不必上传图片。")
+      Text(L10n.mealHint)
         .font(.caption2)
         .foregroundStyle(.secondary)
 
@@ -347,7 +347,7 @@ struct MealCalorieView: View {
       .disabled(!canAnalyze)
 
       if !AppSettings.hasAPIKey {
-        Text("请先在设置中填写 DeepSeek API Key")
+        Text(L10n.addApiKeyFirst)
           .font(.caption)
           .foregroundStyle(.orange)
       }
@@ -388,7 +388,7 @@ struct MealCalorieView: View {
 
   private func confirmCard(_ estimate: MealCalorieEstimate) -> some View {
     VStack(alignment: .leading, spacing: 12) {
-      Text("识别结果")
+      Text(L10n.recognitionResult)
         .font(.headline)
         .foregroundStyle(AppTheme.accent)
       Text(estimate.foodName)
@@ -400,7 +400,7 @@ struct MealCalorieView: View {
         metricChip("脂 \(Int(estimate.fatG))g", color: MacroKind.fat.chartColor)
       }
       if estimate.note.contains("包装成分表") {
-        Text("含包装成分表")
+        Text(L10n.fromNutritionLabel)
           .font(.caption2.weight(.semibold))
           .foregroundStyle(AppTheme.accent)
           .padding(.horizontal, 8)
@@ -427,7 +427,7 @@ struct MealCalorieView: View {
 
   private var todayMealsCard: some View {
     VStack(alignment: .leading, spacing: 12) {
-      Text("今日记录")
+      Text(L10n.todayLog)
         .font(.headline)
         .foregroundStyle(AppTheme.accent)
 
@@ -452,7 +452,7 @@ struct MealCalorieView: View {
           VStack(alignment: .leading, spacing: 4) {
             Text(log.foodName)
               .font(.subheadline.weight(.semibold))
-            Text("\(Int(log.calories)) kcal · 碳\(Int(log.carbsG)) 蛋\(Int(log.proteinG)) 脂\(Int(log.fatG))")
+            Text("\(Int(log.calories)) kcal · \(MacroKind.carbs.shortTitle)\(Int(log.carbsG)) \(MacroKind.protein.shortTitle)\(Int(log.proteinG)) \(MacroKind.fat.shortTitle)\(Int(log.fatG))")
               .font(.caption)
               .foregroundStyle(.secondary)
           }
@@ -565,7 +565,7 @@ private struct RecipePickSheet: View {
           ContentUnavailableView(
             "还没有菜谱",
             systemImage: "book.closed",
-            description: Text("先在「吃」里添加菜谱，再回来选。")
+            description: Text(L10n.noRecipesForPicker)
           )
         } else {
           List(filtered) { recipe in
@@ -607,11 +607,11 @@ private struct RecipePickSheet: View {
           .searchable(text: $searchText, prompt: "搜索菜谱")
         }
       }
-      .navigationTitle("从菜谱选择")
+      .navigationTitle(L10n.pickRecipe)
       .navigationBarTitleDisplayMode(.inline)
       .toolbar {
         ToolbarItem(placement: .cancellationAction) {
-          Button("取消") { dismiss() }
+          Button(L10n.cancel) { dismiss() }
         }
       }
     }

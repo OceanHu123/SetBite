@@ -40,10 +40,10 @@ struct RecipeListView: View {
           categoryFilterBar
 
           if recipes.isEmpty {
-            ContentUnavailableView("还没有食谱", systemImage: "book.closed")
+            ContentUnavailableView(L10n.noRecipes, systemImage: "book.closed")
               .padding(.top, 60)
           } else if filteredRecipes.isEmpty {
-            ContentUnavailableView("没有匹配的食谱", systemImage: "magnifyingglass")
+            ContentUnavailableView(L10n.noMatch, systemImage: "magnifyingglass")
               .padding(.top, 60)
           } else {
             LazyVGrid(columns: columns, spacing: 14) {
@@ -77,7 +77,7 @@ struct RecipeListView: View {
           MealCalorieView()
         }
       }
-      .navigationTitle("SetBite食练记")
+      .navigationTitle(L10n.appName)
       .navigationBarTitleDisplayMode(.large)
       .searchable(text: $searchText, prompt: "搜索菜名或食材，如：猪肉")
       .toolbar {

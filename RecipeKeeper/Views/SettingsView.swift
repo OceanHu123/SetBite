@@ -2,6 +2,7 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 struct SettingsContentView: View {
+  @EnvironmentObject private var languageStore: LanguageStore
   @State private var apiKey = AppSettings.deepSeekAPIKey
   @State private var savedMessage: String?
   @State private var backupExportURL: URL?
@@ -12,13 +13,22 @@ struct SettingsContentView: View {
 
   var body: some View {
     Form {
-      Section("DeepSeek API Key") {
+      Section(L10n.displayLanguage) {
+        Picker(L10n.displayLanguage, selection: $languageStore.mode) {
+          ForEach(AppDisplayLanguage.allCases) { mode in
+            Text(mode.settingsTitle).tag(mode)
+          }
+        }
+        .pickerStyle(.segmented)
+      }
+
+      Section(L10n.apiKeySection) {
         SecureField("sk-...", text: $apiKey)
           .textInputAutocapitalization(.never)
           .autocorrectionDisabled()
-        Link("获取 API Key", destination: URL(string: "https://platform.deepseek.com")!)
+        Link(L10n.getApiKey, destination: URL(string: "https://platform.deepseek.com")!)
           .font(.footnote)
-        Text("食谱解析、体型分析、拍照识热量都需要 API Key")
+        Text(L10n.apiKeyHint)
           .font(.footnote)
           .foregroundStyle(.secondary)
       }
@@ -29,11 +39,11 @@ struct SettingsContentView: View {
         }
       }
 
-      Section("数据备份") {
-        Button("导出本地备份") {
+      Section(L10n.dataBackup) {
+        Button(L10n.exportBackup) {
           do {
             backupExportURL = try BackupExporter.prepareBackupBundle()
-            backupStatusMessage = "备份已生成，可立即分享或存到文件。"
+            backupStatusMessage = L10n.backupReady
             backupErrorMessage = nil
           } catch {
             backupErrorMessage = error.localizedDescription
@@ -41,7 +51,7 @@ struct SettingsContentView: View {
         }
 
         if let backupExportURL {
-          ShareLink("分享备份文件", item: backupExportURL)
+          ShareLink(L10n.shareBackup, item: backupExportURL)
             .font(.footnote)
         }
 
@@ -51,7 +61,7 @@ struct SettingsContentView: View {
             .foregroundStyle(.secondary)
         }
 
-        Button("导入备份并下次启动恢复") {
+        Button(L10n.importBackup) {
           showingBackupImporter = true
         }
 
@@ -66,21 +76,21 @@ struct SettingsContentView: View {
     .appPageBackground()
     .scrollDismissesKeyboard(.interactively)
     .keyboardDoneToolbar()
-    .navigationTitle("设置")
+    .navigationTitle(L10n.settings)
     .navigationBarTitleDisplayMode(.inline)
     .toolbar {
       ToolbarItem(placement: .topBarTrailing) {
-        Button("保存") {
+        Button(L10n.save) {
           AppSettings.deepSeekAPIKey = apiKey.trimmingCharacters(in: .whitespacesAndNewlines)
-          savedMessage = AppSettings.hasAPIKey ? "已保存" : "已清空"
+          savedMessage = AppSettings.hasAPIKey ? L10n.saved : L10n.cleared
         }
       }
     }
-    .alert("备份失败", isPresented: Binding(
+    .alert(L10n.backupFailed, isPresented: Binding(
       get: { backupErrorMessage != nil },
       set: { if !$0 { backupErrorMessage = nil } }
     )) {
-      Button("知道了", role: .cancel) { backupErrorMessage = nil }
+      Button(L10n.gotIt, role: .cancel) { backupErrorMessage = nil }
     } message: {
       Text(backupErrorMessage ?? "")
     }
@@ -94,7 +104,7 @@ struct SettingsContentView: View {
         guard let url = urls.first else { return }
         do {
           try BackupRestorer.stageRestore(from: url)
-          restoreMessage = "恢复文件已导入。请完全退出 App 后重新打开，数据会自动恢复。"
+          restoreMessage = L10n.restoreImported
           backupErrorMessage = nil
         } catch {
           backupErrorMessage = error.localizedDescription
@@ -110,7 +120,7 @@ struct SettingsView: View {
   var body: some View {
     NavigationStack {
       SettingsContentView()
-        .navigationTitle("⚙️ 设置")
+        .navigationTitle("⚙️ \(L10n.settings)")
         .navigationBarTitleDisplayMode(.large)
     }
   }

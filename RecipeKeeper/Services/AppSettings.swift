@@ -1,7 +1,19 @@
 import Foundation
 
 enum AppSettings {
+  private static let displayLanguageKey = "app_display_language"
   private static let apiKeyKey = "deepseek_api_key"
+
+  static var displayLanguage: AppDisplayLanguage {
+    get {
+      guard let raw = UserDefaults.standard.string(forKey: displayLanguageKey),
+            let mode = AppDisplayLanguage(rawValue: raw) else {
+        return .english
+      }
+      return mode
+    }
+    set { UserDefaults.standard.set(newValue.rawValue, forKey: displayLanguageKey) }
+  }
   private static let pantrySeededKey = "default_pantry_seeded"
   private static let exerciseSeedVersionKey = "exercise_library_seed_version"
 

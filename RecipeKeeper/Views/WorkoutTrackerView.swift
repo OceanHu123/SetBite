@@ -163,7 +163,7 @@ struct WorkoutHomeContent: View {
     for exercise in plan.sortedExercises {
       let part = templates.first { $0.id == exercise.templateID }?.bodyPart ?? "其他"
       if seen.insert(part).inserted {
-        parts.append(part)
+        parts.append(BodyPartLexicon.display(part: part))
       }
     }
     return parts.joined()
@@ -567,7 +567,7 @@ struct WorkoutDayDetailView: View {
   private func exerciseCard(_ exercise: WorkoutExercise) -> some View {
     VStack(alignment: .leading, spacing: 12) {
       HStack {
-        Text(exercise.name)
+        Text(ExerciseLexicon.display(exercise.name))
           .font(.headline)
         Spacer()
         if exercise.readyToProgress {
@@ -649,9 +649,9 @@ struct WorkoutDayDetailView: View {
 
   private func handleExerciseSaved(_ exercise: WorkoutExercise) {
     if exercise.readyToProgress {
-      showToast("太棒了！\(exercise.name) 已达上限，下次可以进阶加重")
+      showToast(L10n.exerciseMaxedOut(exercise.name))
     } else {
-      showToast("已记录 \(exercise.name)")
+      showToast(L10n.recordedExercise(exercise.name))
     }
   }
 
@@ -800,7 +800,7 @@ struct ExerciseLibraryPickerSheet: View {
         filterChip(title: "全部", part: nil)
         ForEach(ExerciseBodyCatalog.parts) { part in
           if templates.contains(where: { $0.bodyPart == part.name }) {
-            filterChip(title: part.name, part: part.name)
+            filterChip(title: BodyPartLexicon.display(part: part.name), part: part.name)
           }
         }
       }
@@ -834,7 +834,7 @@ struct ExerciseLibraryPickerSheet: View {
     } label: {
       HStack {
         VStack(alignment: .leading, spacing: 4) {
-          Text(template.name)
+          Text(ExerciseLexicon.display(template.name))
             .font(.body.weight(.medium))
             .foregroundStyle(.primary)
           Text(template.maxLabel)
@@ -926,7 +926,7 @@ struct ExerciseLibraryManageView: View {
               editingTemplate = template
             } label: {
               VStack(alignment: .leading, spacing: 4) {
-                Text(template.name)
+                Text(ExerciseLexicon.display(template.name))
                   .font(.body.weight(.medium))
                   .foregroundStyle(.primary)
                 Text(template.maxLabel)
@@ -1033,7 +1033,7 @@ private struct ExerciseTemplateMergeSheet: View {
         } label: {
           HStack {
             VStack(alignment: .leading, spacing: 4) {
-              Text(target.name)
+              Text(ExerciseLexicon.display(target.name))
                 .foregroundStyle(.primary)
               Text(target.categoryLabel)
                 .font(.caption)
@@ -1047,7 +1047,7 @@ private struct ExerciseTemplateMergeSheet: View {
           }
         }
       }
-      .navigationTitle("合并“\(source.name)”")
+      .navigationTitle("\(L10n.mergeExercise) · \(ExerciseLexicon.display(source.name))")
       .navigationBarTitleDisplayMode(.inline)
       .toolbar {
         ToolbarItem(placement: .cancellationAction) {
@@ -1130,7 +1130,7 @@ struct ExerciseTemplateEditorSheet: View {
         Section("部位") {
           Picker("大类", selection: $bodyPart) {
             ForEach(ExerciseBodyCatalog.parts) { part in
-              Text(part.name).tag(part.name)
+              Text(BodyPartLexicon.display(part: part.name)).tag(part.name)
             }
           }
           .onChange(of: bodyPart) { _, newPart in
@@ -1139,7 +1139,7 @@ struct ExerciseTemplateEditorSheet: View {
 
           Picker("细分", selection: $bodySubpart) {
             ForEach(subpartOptions, id: \.self) { sub in
-              Text(sub).tag(sub)
+              Text(BodyPartLexicon.display(subpart: sub)).tag(sub)
             }
           }
         }
@@ -1335,7 +1335,7 @@ struct WorkoutLogSheet: View {
         .padding(16)
       }
       .appPageBackground()
-      .navigationTitle(exercise.name)
+      .navigationTitle(ExerciseLexicon.display(exercise.name))
       .navigationBarTitleDisplayMode(.inline)
       .toolbar {
         ToolbarItem(placement: .cancellationAction) {

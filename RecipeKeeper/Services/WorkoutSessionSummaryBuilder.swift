@@ -31,7 +31,7 @@ struct WorkoutSessionSummaryData: Equatable, Identifiable {
       let minutes = totalMinutes % 60
       return minutes > 0 ? "\(hours)h\(String(format: "%02d", minutes))m" : "\(hours)h"
     }
-    return "\(totalMinutes)分钟"
+    return "\(totalMinutes)\(L10n.minutes)"
   }
 
   var capacityLabel: String {

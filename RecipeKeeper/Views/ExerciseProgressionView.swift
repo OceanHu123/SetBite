@@ -35,7 +35,7 @@ struct ExerciseProgressionView: View {
                   .foregroundStyle(AppTheme.accent)
                   .frame(width: 28)
                 VStack(alignment: .leading, spacing: 4) {
-                  Text(group.part)
+                  Text(BodyPartLexicon.display(part: group.part))
                     .font(.headline)
                   Text("\(group.templates.count) 个动作")
                     .font(.caption)
@@ -61,7 +61,7 @@ struct ExerciseProgressionView: View {
       }
     }
     .appPageBackground()
-    .navigationTitle("进阶折线")
+    .navigationTitle(L10n.progression)
     .navigationBarTitleDisplayMode(.inline)
   }
 
@@ -136,7 +136,7 @@ private struct ProgressionPartDetailView: View {
       .padding(16)
     }
     .appPageBackground()
-    .navigationTitle(group.part)
+    .navigationTitle(BodyPartLexicon.display(part: group.part))
     .navigationBarTitleDisplayMode(.inline)
   }
 }
@@ -199,7 +199,7 @@ private struct ProgressionChartCard: View {
   private var header: some View {
     HStack {
       VStack(alignment: .leading, spacing: 4) {
-        Text(template.name)
+        Text(ExerciseLexicon.display(template.name))
           .font(.headline)
         Text(template.categoryLabel)
           .font(.caption)

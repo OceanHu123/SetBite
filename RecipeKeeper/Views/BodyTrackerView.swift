@@ -19,7 +19,7 @@ struct BodyTrackerView: View {
         }
       }
       .appPageBackground()
-      .navigationTitle(section == 0 ? "💪 健身" : "💪 体型")
+      .navigationTitle(section == 0 ? "💪 \(L10n.train)" : "💪 \(L10n.body)")
       .navigationBarTitleDisplayMode(.large)
       .toolbar {
         ToolbarItem(placement: .topBarTrailing) {
@@ -29,7 +29,7 @@ struct BodyTrackerView: View {
             Image(systemName: "ellipsis.circle")
               .foregroundStyle(AppTheme.accent)
           }
-          .accessibilityLabel("更多")
+          .accessibilityLabel(L10n.more)
         }
       }
       .sheet(isPresented: $showingTools, onDismiss: {
@@ -98,35 +98,35 @@ private struct TrainToolsSheet: View {
       List {
         Section {
           toolRow(
-            title: "导入计划",
-            subtitle: "用文字或 AI 导入训练安排",
+            title: L10n.importPlan,
+            subtitle: L10n.importPlanSubtitle,
             systemImage: "sparkles",
             action: .importPlan
           )
           toolRow(
-            title: "进阶折线",
-            subtitle: "按身体部位看重量变化",
+            title: L10n.progression,
+            subtitle: L10n.progressionSubtitle,
             systemImage: "chart.xyaxis.line",
             action: .progression
           )
           if isOnBodySection {
             toolRow(
-              title: "健身计划",
-              subtitle: "回到本周训练安排",
+              title: L10n.workoutPlan,
+              subtitle: L10n.workoutPlanSubtitle,
               systemImage: "dumbbell.fill",
               action: .workoutHome
             )
           } else {
             toolRow(
-              title: "体型记录",
-              subtitle: "体重、围度与趋势",
+              title: L10n.bodyRecords,
+              subtitle: L10n.bodyRecordsSubtitle,
               systemImage: "ruler",
               action: .bodyRecords
             )
           }
           toolRow(
-            title: "动作库",
-            subtitle: "管理训练动作与目标",
+            title: L10n.exerciseLibrary,
+            subtitle: L10n.exerciseLibrarySubtitle,
             systemImage: "shippingbox",
             action: .exerciseLibrary
           )
@@ -135,11 +135,11 @@ private struct TrainToolsSheet: View {
       .listStyle(.insetGrouped)
       .scrollContentBackground(.hidden)
       .appPageBackground()
-      .navigationTitle("练 · 功能")
+      .navigationTitle(L10n.trainFeatures)
       .navigationBarTitleDisplayMode(.inline)
       .toolbar {
         ToolbarItem(placement: .cancellationAction) {
-          Button("关闭") { dismiss() }
+          Button(L10n.close) { dismiss() }
         }
       }
     }
