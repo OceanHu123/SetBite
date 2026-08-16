@@ -18,7 +18,6 @@
 		BF0000010000000000000009 /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000009 /* RecipeListView.swift */; };
 		BF000001000000000000000A /* AddRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000000A /* AddRecipeView.swift */; };
 		BF000001000000000000000B /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000000B /* RecipeDetailView.swift */; };
-		BF000001000000000000000C /* ToCookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000000C /* ToCookView.swift */; };
 		BF000001000000000000000D /* ShoppingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000000D /* ShoppingListView.swift */; };
 		BF000001000000000000000E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000000E /* SettingsView.swift */; };
 		BF000001000000000000000F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000000F /* Assets.xcassets */; };
@@ -41,7 +40,6 @@
 		BF0000010000000000000022 /* ExerciseBodyCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000025 /* ExerciseBodyCatalog.swift */; };
 		BF0000010000000000000023 /* ExerciseSessionLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000026 /* ExerciseSessionLog.swift */; };
 		BF0000010000000000000024 /* ExerciseProgressionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000027 /* ExerciseProgressionView.swift */; };
-		BF0000010000000000000025 /* OtherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000028 /* OtherView.swift */; };
 		BF0000010000000000000026 /* WorkoutPlanAIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000029 /* WorkoutPlanAIClient.swift */; };
 		BF0000010000000000000027 /* WorkoutPlanChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000002A /* WorkoutPlanChatView.swift */; };
 		BF0000010000000000000028 /* ExerciseNameCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000002B /* ExerciseNameCatalog.swift */; };
@@ -121,7 +119,6 @@
 		FR0000010000000000000009 /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
 		FR000001000000000000000A /* AddRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeView.swift; sourceTree = "<group>"; };
 		FR000001000000000000000B /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
-		FR000001000000000000000C /* ToCookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCookView.swift; sourceTree = "<group>"; };
 		FR000001000000000000000D /* ShoppingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListView.swift; sourceTree = "<group>"; };
 		FR000001000000000000000E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FR000001000000000000000F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -147,7 +144,6 @@
 		FR0000010000000000000025 /* ExerciseBodyCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseBodyCatalog.swift; sourceTree = "<group>"; };
 		FR0000010000000000000026 /* ExerciseSessionLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSessionLog.swift; sourceTree = "<group>"; };
 		FR0000010000000000000027 /* ExerciseProgressionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseProgressionView.swift; sourceTree = "<group>"; };
-		FR0000010000000000000028 /* OtherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherView.swift; sourceTree = "<group>"; };
 		FR0000010000000000000029 /* WorkoutPlanAIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPlanAIClient.swift; sourceTree = "<group>"; };
 		FR000001000000000000002A /* WorkoutPlanChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPlanChatView.swift; sourceTree = "<group>"; };
 		FR000001000000000000002B /* ExerciseNameCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseNameCatalog.swift; sourceTree = "<group>"; };
@@ -303,12 +299,10 @@
 				FR000001000000000000004B /* WaterIntakeView.swift */,
 				FR000001000000000000000A /* AddRecipeView.swift */,
 				FR000001000000000000000B /* RecipeDetailView.swift */,
-				FR000001000000000000000C /* ToCookView.swift */,
 				FR000001000000000000000D /* ShoppingListView.swift */,
 				FR0000010000000000000022 /* BodyTrackerView.swift */,
 				FR0000010000000000000024 /* WorkoutTrackerView.swift */,
 				FR0000010000000000000027 /* ExerciseProgressionView.swift */,
-				FR0000010000000000000028 /* OtherView.swift */,
 				FR000001000000000000002A /* WorkoutPlanChatView.swift */,
 				FR000001000000000000000E /* SettingsView.swift */,
 			);
@@ -507,7 +501,6 @@
 				BF0000010000000000000009 /* RecipeListView.swift in Sources */,
 				BF000001000000000000000A /* AddRecipeView.swift in Sources */,
 				BF000001000000000000000B /* RecipeDetailView.swift in Sources */,
-				BF000001000000000000000C /* ToCookView.swift in Sources */,
 				BF000001000000000000000D /* ShoppingListView.swift in Sources */,
 				BF000001000000000000000E /* SettingsView.swift in Sources */,
 				BF0000010000000000000010 /* ImportCoordinator.swift in Sources */,
@@ -548,7 +541,6 @@
 				BF0000010000000000000022 /* ExerciseBodyCatalog.swift in Sources */,
 				BF0000010000000000000023 /* ExerciseSessionLog.swift in Sources */,
 				BF0000010000000000000024 /* ExerciseProgressionView.swift in Sources */,
-				BF0000010000000000000025 /* OtherView.swift in Sources */,
 				BF0000010000000000000026 /* WorkoutPlanAIClient.swift in Sources */,
 				BF0000010000000000000027 /* WorkoutPlanChatView.swift in Sources */,
 				BF0000010000000000000028 /* ExerciseNameCatalog.swift in Sources */,

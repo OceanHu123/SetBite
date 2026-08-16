@@ -409,9 +409,3 @@ private struct BottleSilhouette: Shape {
     return path
   }
 }
-
-struct WaterIntakeView: View {
-  var body: some View {
-    WaterAddContent(showsDoneButton: false)
-  }
-}
