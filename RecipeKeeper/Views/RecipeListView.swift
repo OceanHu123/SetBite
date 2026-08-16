@@ -11,8 +11,8 @@ struct RecipeListView: View {
   @State private var navigationPath = NavigationPath()
 
   private let columns = [
-    GridItem(.flexible(), spacing: 14, alignment: .top),
-    GridItem(.flexible(), spacing: 14, alignment: .top)
+    GridItem(.flexible(), spacing: 16, alignment: .top),
+    GridItem(.flexible(), spacing: 16, alignment: .top)
   ]
 
   private var filteredRecipes: [Recipe] {
@@ -36,22 +36,22 @@ struct RecipeListView: View {
   var body: some View {
     NavigationStack(path: $navigationPath) {
       ScrollView {
-        VStack(spacing: 14) {
+        VStack(spacing: 16) {
           categoryFilterBar
 
           if recipes.isEmpty {
             ContentUnavailableView(L10n.noRecipes, systemImage: "book.closed")
-              .padding(.top, 60)
+              .padding(.top, 40)
           } else if filteredRecipes.isEmpty {
             ContentUnavailableView(L10n.noMatch, systemImage: "magnifyingglass")
-              .padding(.top, 60)
+              .padding(.top, 40)
           } else {
-            LazyVGrid(columns: columns, spacing: 14) {
+            LazyVGrid(columns: columns, spacing: 16) {
               ForEach(filteredRecipes) { recipe in
                 RecipeCard(recipe: recipe)
                   .fixedSize(horizontal: false, vertical: true)
                   .frame(maxWidth: .infinity, alignment: .topLeading)
-                  .contentShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                  .contentShape(RoundedRectangle(cornerRadius: AppTheme.cardRadius, style: .continuous))
                   .onTapGesture {
                     navigationPath.append(recipe.id)
                   }
@@ -61,7 +61,7 @@ struct RecipeListView: View {
         }
         .padding(16)
       }
-      .background(AppTheme.pageBackground)
+      .appPageBackground()
       .navigationDestination(for: UUID.self) { id in
         if let recipe = recipes.first(where: { $0.id == id }) {
           RecipeDetailView(recipe: recipe)
@@ -79,7 +79,7 @@ struct RecipeListView: View {
       }
       .navigationTitle(L10n.appName)
       .navigationBarTitleDisplayMode(.large)
-      .searchable(text: $searchText, prompt: "搜索菜名或食材，如：猪肉")
+      .searchable(text: $searchText, prompt: L10n.search)
       .toolbar {
         ToolbarItem(placement: .topBarLeading) {
           Button {
@@ -87,7 +87,7 @@ struct RecipeListView: View {
           } label: {
             Image(systemName: "gearshape")
           }
-          .accessibilityLabel("设置")
+          .accessibilityLabel(L10n.settings)
         }
         ToolbarItemGroup(placement: .topBarTrailing) {
           Button {
@@ -95,7 +95,7 @@ struct RecipeListView: View {
           } label: {
             Image(systemName: "flame.fill")
           }
-          .accessibilityLabel("识热量")
+          .accessibilityLabel(L10n.dietRecord)
 
           Button {
             navigationPath.append(EatDestination.shopping)
@@ -113,7 +113,7 @@ struct RecipeListView: View {
                 }
               }
           }
-          .accessibilityLabel("待购")
+          .accessibilityLabel(L10n.shoppingList)
 
           Button {
             showingAdd = true
@@ -123,7 +123,7 @@ struct RecipeListView: View {
               .symbolRenderingMode(.palette)
               .foregroundStyle(.white, AppTheme.accent)
           }
-          .accessibilityLabel("添加食谱")
+          .accessibilityLabel(L10n.newRecipe)
         }
       }
       .sheet(isPresented: $showingAdd) {
@@ -141,7 +141,7 @@ struct RecipeListView: View {
   private var categoryFilterBar: some View {
     ScrollView(.horizontal, showsIndicators: false) {
       HStack(spacing: 8) {
-        categoryChip(title: "全部", category: nil)
+        categoryChip(title: L10n.t("All", "全部"), category: nil)
         ForEach(RecipeCategoryCatalog.all, id: \.self) { category in
           categoryChip(title: category, category: category)
         }
@@ -156,11 +156,15 @@ struct RecipeListView: View {
       selectedCategory = category
     } label: {
       Text(title)
-        .font(.caption.weight(.semibold))
-        .padding(.horizontal, 12)
-        .padding(.vertical, 8)
-        .background(isSelected ? AppTheme.accent : AppTheme.cardBackground, in: Capsule())
+        .font(AppTheme.bodyFont(size: 12, weight: .semibold))
+        .padding(.horizontal, 14)
+        .padding(.vertical, 9)
+        .background(
+          isSelected ? AppTheme.accent : AppTheme.cardBackground.opacity(0.92),
+          in: Capsule()
+        )
         .foregroundStyle(isSelected ? .white : .primary)
+        .shadow(color: .black.opacity(isSelected ? 0.08 : 0.04), radius: 8, y: 2)
     }
     .buttonStyle(.plain)
   }
@@ -177,17 +181,19 @@ struct RecipeCard: View {
 
   var body: some View {
     VStack(alignment: .leading, spacing: 0) {
-      RecipeCoverImage(data: recipe.coverImageData, height: 120, cornerRadius: 14)
+      RecipeCoverImage(data: recipe.coverImageData, height: 128, cornerRadius: 20)
+        .padding(8)
+
       VStack(alignment: .leading, spacing: 6) {
         Text(recipe.title)
-          .font(.subheadline.weight(.semibold))
+          .font(AppTheme.bodyFont(size: 15, weight: .semibold))
           .foregroundStyle(.primary)
           .lineLimit(2)
         if !recipe.effectiveCategories.isEmpty {
           HStack(spacing: 4) {
             ForEach(recipe.effectiveCategories.prefix(2), id: \.self) { category in
               Text(category)
-                .font(.caption2.weight(.medium))
+                .font(AppTheme.bodyFont(size: 10, weight: .medium))
                 .foregroundStyle(AppTheme.accent)
                 .padding(.horizontal, 8)
                 .padding(.vertical, 3)
@@ -195,7 +201,7 @@ struct RecipeCard: View {
             }
             if recipe.effectiveCategories.count > 2 {
               Text("+\(recipe.effectiveCategories.count - 2)")
-                .font(.caption2.weight(.medium))
+                .font(AppTheme.bodyFont(size: 10, weight: .medium))
                 .foregroundStyle(.secondary)
             }
           }
@@ -204,12 +210,12 @@ struct RecipeCard: View {
           Label("\(recipe.ingredientNames.count)", systemImage: "basket")
           Label("\(recipe.steps.count)", systemImage: "list.number")
         }
-        .font(.caption2)
+        .font(AppTheme.bodyFont(size: 10))
         .foregroundStyle(.secondary)
       }
-      .padding(10)
+      .padding(.horizontal, 12)
+      .padding(.bottom, 12)
     }
-    .background(AppTheme.cardBackground, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-    .shadow(color: .black.opacity(0.06), radius: 8, y: 3)
+    .appCardStyle()
   }
 }

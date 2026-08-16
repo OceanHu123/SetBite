@@ -26,7 +26,7 @@ struct ContentView: View {
     .environmentObject(ImportCoordinator())
     .environmentObject(LanguageStore())
     .modelContainer(for: [
-      Recipe.self, ShoppingItem.self, PantryItem.self, CookingLog.self, MealMacroLog.self, BodyRecord.self,
+      Recipe.self, ShoppingItem.self, PantryItem.self, CookingLog.self, MealMacroLog.self, WaterLog.self, BodyRecord.self,
       WorkoutWeekPlan.self, WorkoutDayPlan.self, WorkoutExercise.self, ExerciseTemplate.self,
       ExerciseSessionLog.self
     ], inMemory: true)

@@ -60,6 +60,12 @@ enum L10n {
   static var settings: String { t("Settings", "设置") }
   static var save: String { t("Save", "保存") }
   static var displayLanguage: String { t("Display language", "显示语言") }
+  static var dietRecord: String { t("Diet log", "饮食记录") }
+  static var todayIntake: String { t("Today's intake", "今日摄入") }
+  static var waterReminder: String { t("Water", "喝水") }
+  static var drinkWaterHint: String { t("Remember to drink water", "记得多喝水哦") }
+  static var waterTitle: String { t("Hydration", "喝水") }
+  static var waterGoal: String { t("Goal", "目标") }
   static var apiKeySection: String { t("DeepSeek API Key", "DeepSeek API Key") }
   static var getApiKey: String { t("Get API Key", "获取 API Key") }
   static var apiKeyHint: String {

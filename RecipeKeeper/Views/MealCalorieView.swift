@@ -8,6 +8,7 @@ struct MealCalorieView: View {
   @Query(sort: \MealMacroLog.createdAt, order: .reverse) private var allLogs: [MealMacroLog]
   @Query(sort: \Recipe.createdAt, order: .reverse) private var recipes: [Recipe]
   @Query private var dayPlans: [WorkoutDayPlan]
+  @Query(sort: \WaterLog.createdAt, order: .reverse) private var waterLogs: [WaterLog]
 
   @FocusState private var isCaptionFocused: Bool
 
@@ -21,6 +22,7 @@ struct MealCalorieView: View {
   @State private var errorMessage: String?
   @State private var draftEstimate: MealCalorieEstimate?
   @State private var expandedMacro: MacroKind?
+  @State private var showingWaterSheet = false
 
   private var todayLogs: [MealMacroLog] {
     allLogs.filter { Calendar.current.isDateInToday($0.date) }
@@ -45,6 +47,15 @@ struct MealCalorieView: View {
 
   private var calorieRingProgress: Double {
     min(max(calorieProgress, 0), 1)
+  }
+
+  private var todayWaterMl: Int {
+    Int(
+      waterLogs
+        .filter { Calendar.current.isDateInToday($0.createdAt) }
+        .reduce(0.0) { $0 + $1.amountMl }
+        .rounded()
+    )
   }
 
   private var canAnalyze: Bool {
@@ -105,6 +116,9 @@ struct MealCalorieView: View {
         applyRecipe(recipe)
       }
     }
+    .sheet(isPresented: $showingWaterSheet) {
+      WaterAddSheet()
+    }
   }
 
   private var dailyProgressCard: some View {
@@ -119,33 +133,40 @@ struct MealCalorieView: View {
           .foregroundStyle(.secondary)
       }
 
-      ZStack {
-        Circle()
-          .stroke(Color(.systemGray5), lineWidth: 18)
-        Circle()
-          .trim(from: 0, to: calorieRingProgress)
-          .stroke(
-            AppTheme.accent,
-            style: StrokeStyle(lineWidth: 18, lineCap: .round)
-          )
-          .rotationEffect(.degrees(-90))
-          .animation(.easeInOut(duration: 0.35), value: calorieRingProgress)
+      HStack(alignment: .center, spacing: 16) {
+        ZStack {
+          Circle()
+            .stroke(Color(.systemGray5), lineWidth: 16)
+          Circle()
+            .trim(from: 0, to: calorieRingProgress)
+            .stroke(
+              AppTheme.accent,
+              style: StrokeStyle(lineWidth: 16, lineCap: .round)
+            )
+            .rotationEffect(.degrees(-90))
+            .animation(.easeInOut(duration: 0.35), value: calorieRingProgress)
 
-        VStack(spacing: 4) {
-          Text("\(Int(eatenCalories.rounded()))")
-            .font(.system(size: 36, weight: .bold, design: .rounded))
-            .monospacedDigit()
-          Text("/ \(Int(macroTargets.calories)) kcal")
-            .font(.caption.weight(.semibold))
-            .foregroundStyle(.secondary)
-          Text("\(Int((min(calorieProgress, 9.99) * 100).rounded()))%")
-            .font(.caption2.weight(.bold))
-            .foregroundStyle(AppTheme.accent)
+          VStack(spacing: 4) {
+            Text("\(Int(eatenCalories.rounded()))")
+              .font(.system(size: 30, weight: .bold, design: .rounded))
+              .monospacedDigit()
+            Text("/ \(Int(macroTargets.calories)) kcal")
+              .font(.caption.weight(.semibold))
+              .foregroundStyle(.secondary)
+            Text("\(Int((min(calorieProgress, 9.99) * 100).rounded()))%")
+              .font(.caption2.weight(.bold))
+              .foregroundStyle(AppTheme.accent)
+          }
         }
+        .frame(width: 176, height: 176)
+
+        WaterVerticalBar(
+          todayMl: todayWaterMl,
+          targetMl: Int(AppSettings.dailyWaterTargetMl),
+          action: { showingWaterSheet = true }
+        )
       }
-      .frame(width: 200, height: 200)
       .frame(maxWidth: .infinity)
-      .padding(.vertical, 4)
 
       VStack(spacing: 14) {
         ForEach(macroRows) { row in
@@ -154,7 +175,7 @@ struct MealCalorieView: View {
       }
     }
     .padding(18)
-    .background(AppTheme.cardBackground, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+    .appCardStyle()
   }
 
   private func macroProgressBar(_ row: MacroProgressRow) -> some View {
@@ -359,7 +380,7 @@ struct MealCalorieView: View {
       }
     }
     .padding(18)
-    .background(AppTheme.cardBackground, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+    .appCardStyle()
   }
 
   private func dismissCaptionKeyboard() {
@@ -422,7 +443,7 @@ struct MealCalorieView: View {
       .tint(.green)
     }
     .padding(18)
-    .background(AppTheme.cardBackground, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+    .appCardStyle()
   }
 
   private var todayMealsCard: some View {
@@ -466,7 +487,7 @@ struct MealCalorieView: View {
       }
     }
     .padding(18)
-    .background(AppTheme.cardBackground, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+    .appCardStyle()
   }
 
   private func metricChip(_ text: String, color: Color) -> some View {

@@ -2,6 +2,7 @@ import Foundation
 
 enum AppSettings {
   private static let displayLanguageKey = "app_display_language"
+  private static let dailyWaterTargetKey = "daily_water_target_ml"
   private static let apiKeyKey = "deepseek_api_key"
 
   static var displayLanguage: AppDisplayLanguage {
@@ -13,6 +14,14 @@ enum AppSettings {
       return mode
     }
     set { UserDefaults.standard.set(newValue.rawValue, forKey: displayLanguageKey) }
+  }
+
+  static var dailyWaterTargetMl: Double {
+    get {
+      let value = UserDefaults.standard.double(forKey: dailyWaterTargetKey)
+      return value > 0 ? value : 2000
+    }
+    set { UserDefaults.standard.set(newValue, forKey: dailyWaterTargetKey) }
   }
   private static let pantrySeededKey = "default_pantry_seeded"
   private static let exerciseSeedVersionKey = "exercise_library_seed_version"

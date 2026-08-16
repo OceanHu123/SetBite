@@ -2,23 +2,60 @@ import SwiftUI
 import UIKit
 
 enum AppTheme {
-  static let accent = Color(red: 0.92, green: 0.38, blue: 0.18)
-  static let accentSoft = Color(red: 1.0, green: 0.94, blue: 0.9)
-  static let pageBackground = Color(red: 0.99, green: 0.97, blue: 0.94)
+  static let accent = Color(red: 0.95, green: 0.40, blue: 0.26)
+  static let accentSoft = Color(red: 1.0, green: 0.93, blue: 0.88)
+  static let pageBackground = Color(red: 0.99, green: 0.95, blue: 0.92)
   static let cardBackground = Color.white
-  static let heroGradient = LinearGradient(
+  static let secondaryCardFill = Color(red: 1.0, green: 0.92, blue: 0.88)
+  static let waterCardFill = Color(red: 0.88, green: 0.95, blue: 0.94)
+  static let waterFill = Color(red: 0.32, green: 0.70, blue: 0.92).opacity(0.88)
+
+  static let cardRadius: CGFloat = 24
+  static let chipRadius: CGFloat = 22
+  static let cardShadow = Color.black.opacity(0.10)
+  static let cardShadowRadius: CGFloat = 16
+  static let cardShadowY: CGFloat = 6
+  static let cardBorder = Color.clear
+  static let cardBorderWidth: CGFloat = 0
+
+  static let pageGradient = LinearGradient(
     colors: [
-      Color(red: 0.98, green: 0.55, blue: 0.22),
-      Color(red: 0.86, green: 0.28, blue: 0.18)
+      Color(red: 1.0, green: 0.94, blue: 0.90),
+      Color(red: 0.99, green: 0.96, blue: 0.93),
+      Color(red: 0.97, green: 0.93, blue: 0.90)
     ],
     startPoint: .topLeading,
     endPoint: .bottomTrailing
   )
+
+  static let heroGradient = LinearGradient(
+    colors: [
+      Color(red: 0.99, green: 0.58, blue: 0.32),
+      Color(red: 0.92, green: 0.32, blue: 0.22)
+    ],
+    startPoint: .topLeading,
+    endPoint: .bottomTrailing
+  )
+
+  static func titleFont(size: CGFloat = 28, weight: Font.Weight = .bold) -> Font {
+    .system(size: size, weight: weight, design: .rounded)
+  }
+
+  static func bodyFont(size: CGFloat = 15, weight: Font.Weight = .regular) -> Font {
+    .system(size: size, weight: weight, design: .rounded)
+  }
 }
 
 extension View {
   func appPageBackground() -> some View {
-    background(AppTheme.pageBackground.ignoresSafeArea())
+    background {
+      AppTheme.pageGradient
+        .ignoresSafeArea()
+    }
+  }
+
+  func appCardStyle() -> some View {
+    modifier(AppCardStyleModifier())
   }
 
   func dismissKeyboardOnTap() -> some View {
@@ -29,11 +66,26 @@ extension View {
     toolbar {
       ToolbarItemGroup(placement: .keyboard) {
         Spacer()
-        Button("完成") {
+        Button(L10n.done) {
           KeyboardDismiss.dismiss()
         }
       }
     }
+  }
+}
+
+private struct AppCardStyleModifier: ViewModifier {
+  func body(content: Content) -> some View {
+    content
+      .background(
+        AppTheme.cardBackground,
+        in: RoundedRectangle(cornerRadius: AppTheme.cardRadius, style: .continuous)
+      )
+      .shadow(
+        color: AppTheme.cardShadow,
+        radius: AppTheme.cardShadowRadius,
+        y: AppTheme.cardShadowY
+      )
   }
 }
 
@@ -63,7 +115,11 @@ private struct DismissKeyboardModifier: ViewModifier {
 struct RecipeCoverImage: View {
   let data: Data?
   var height: CGFloat = 200
-  var cornerRadius: CGFloat = 16
+  var cornerRadius: CGFloat? = nil
+
+  private var resolvedRadius: CGFloat {
+    cornerRadius ?? 18
+  }
 
   var body: some View {
     Group {
@@ -82,7 +138,7 @@ struct RecipeCoverImage: View {
     }
     .frame(maxWidth: .infinity)
     .frame(height: height)
-    .clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
+    .clipShape(RoundedRectangle(cornerRadius: resolvedRadius, style: .continuous))
   }
 }
 

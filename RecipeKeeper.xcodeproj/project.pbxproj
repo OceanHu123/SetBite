@@ -73,6 +73,8 @@
 		BF0000010000000000000046 /* MacroFillCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000046 /* MacroFillCatalog.swift */; };
 		BF0000010000000000000047 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000047 /* AppLanguage.swift */; };
 		BF0000010000000000000048 /* ExerciseLexicon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000048 /* ExerciseLexicon.swift */; };
+		BF000001000000000000004A /* WaterLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000004A /* WaterLog.swift */; };
+		BF000001000000000000004B /* WaterIntakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000004B /* WaterIntakeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,6 +180,8 @@
 		FR0000010000000000000046 /* MacroFillCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroFillCatalog.swift; sourceTree = "<group>"; };
 		FR0000010000000000000047 /* AppLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLanguage.swift; sourceTree = "<group>"; };
 		FR0000010000000000000048 /* ExerciseLexicon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseLexicon.swift; sourceTree = "<group>"; };
+		FR000001000000000000004A /* WaterLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterLog.swift; sourceTree = "<group>"; };
+		FR000001000000000000004B /* WaterIntakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterIntakeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +257,7 @@
 				FR0000010000000000000026 /* ExerciseSessionLog.swift */,
 				FR0000010000000000000041 /* MealMacroLog.swift */,
 				FR0000010000000000000048 /* ExerciseLexicon.swift */,
+				FR000001000000000000004A /* WaterLog.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -295,6 +300,7 @@
 				FR0000010000000000000008 /* ContentView.swift */,
 				FR0000010000000000000009 /* RecipeListView.swift */,
 				FR0000010000000000000043 /* MealCalorieView.swift */,
+				FR000001000000000000004B /* WaterIntakeView.swift */,
 				FR000001000000000000000A /* AddRecipeView.swift */,
 				FR000001000000000000000B /* RecipeDetailView.swift */,
 				FR000001000000000000000C /* ToCookView.swift */,
@@ -528,6 +534,8 @@
 				BF0000010000000000000046 /* MacroFillCatalog.swift in Sources */,
 				BF0000010000000000000047 /* AppLanguage.swift in Sources */,
 				BF0000010000000000000048 /* ExerciseLexicon.swift in Sources */,
+				BF000001000000000000004A /* WaterLog.swift in Sources */,
+				BF000001000000000000004B /* WaterIntakeView.swift in Sources */,
 				BF0000010000000000000043 /* MealCalorieView.swift in Sources */,
 				BF000001000000000000001B /* RecipeShoppingHelper.swift in Sources */,
 				BF000001000000000000001C /* BodyRecord.swift in Sources */,

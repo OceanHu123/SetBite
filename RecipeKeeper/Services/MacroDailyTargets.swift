@@ -29,18 +29,18 @@ enum MacroDailyTargets {
   }
 
   static let trainingDay = Values(
-    carbsG: 300,
-    proteinG: 100,
-    fatG: 55,
-    calories: 2100,
+    carbsG: 290,
+    proteinG: 115,
+    fatG: 60,
+    calories: 2150,
     isTrainingDay: true
   )
 
   static let restDay = Values(
-    carbsG: 240,
-    proteinG: 100,
+    carbsG: 290,
+    proteinG: 115,
     fatG: 60,
-    calories: 1900,
+    calories: 2150,
     isTrainingDay: false
   )
 

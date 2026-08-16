@@ -20,6 +20,7 @@ struct RecipeKeeperApp: App {
           importCoordinator.checkForPendingImport()
         }
         .preferredColorScheme(.light)
+        .tint(AppTheme.accent)
     }
     .modelContainer(AppModelContainer.shared)
   }
@@ -32,6 +33,7 @@ enum AppModelContainer {
     PantryItem.self,
     CookingLog.self,
     MealMacroLog.self,
+    WaterLog.self,
     BodyRecord.self,
     WorkoutWeekPlan.self,
     WorkoutDayPlan.self,
